@@ -1,0 +1,27 @@
+<?php 
+    $connection = mysqli_connect('localhost','id20371762_vivek','ViV@14241400','id20371762_ewaste_db');
+
+    // $userId;
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    
+    $sql = "SELECT * FROM `user` WHERE email='$email' AND password='$password'";
+    
+    $result = mysqli_query($connection,$sql);
+    
+    $totalRows=mysqli_num_rows($result);
+    
+    // if($totalRows >= 1){
+    //     echo json_encode("success");
+    // }
+    
+    
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    
+    print json_encode($rows);
+    
+    // mysqli_close($connection);
+?>

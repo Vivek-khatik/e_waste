@@ -1,0 +1,29 @@
+<?php 
+    $connection = mysqli_connect('localhost','id20371762_vivek','ViV@14241400','id20371762_ewaste_db');
+
+    $userId;
+    //fetch table rows from mysql db
+    $userId = $_POST['userId'];
+    $id = $_POST['id'];
+    $title=$_POST['title'];
+    $body=$_POST['body'];
+ 
+ 
+    $sql = "INSERT INTO user (userId, id, title, body) VALUES ('$userId', '$id', '$title', '$body')";
+    
+    $result = mysqli_query($connection,$sql);
+    if($result){
+        echo '<script>';
+        echo "alert('success')";
+        echo '</script>';
+    }
+    else
+    {
+        echo '<script>';
+        echo "alert('error')";
+        echo '</script>';
+    }
+
+     
+    mysqli_close($connection);
+?>

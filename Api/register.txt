@@ -1,0 +1,21 @@
+<?php 
+    $connection = mysqli_connect('localhost','id20371762_vivek','ViV@14241400','id20371762_ewaste_db');
+
+    // $userId;
+
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $gender = $_POST['gender'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $contactNo = $_POST['contactNo'];
+    
+    $idProof = $_POST['idProof'];
+ 
+ 
+    $sql = "INSERT INTO user(userId, first_name, last_name, gender, password, email, contactNo, idProof) VALUES (NULL,'$first_name','$last_name','$gender','$password','$email','$contactNo','$idProof')";
+    
+    $result = mysqli_query($connection,$sql);
+     
+    mysqli_close($connection);
+?>

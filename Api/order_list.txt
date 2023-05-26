@@ -1,0 +1,31 @@
+<?php 
+    error_reporting(0);
+    $connection = mysqli_connect('localhost','id20371762_vivek','ViV@14241400','id20371762_ewaste_db');
+
+    // $userId;
+    $userEmail = $_POST['userEmail'];
+    $prodName=$_POST['prodName'];
+    $prodPrice=$_POST['prodPrice'];
+    //$prodImg=$_POST['prodImg'];
+    
+    $sql = "SELECT userEmail, prodName, prodPrice FROM `orderList` WHERE userEmail='$userEmail'";
+    
+    
+    $result = mysqli_query($connection,$sql);
+    
+    $totalRows=mysqli_num_rows($result);
+    
+    // if($totalRows >= 1){
+    //     echo json_encode("success");
+    // }
+    
+    
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    
+    print json_encode($rows);
+    
+    // mysqli_close($connection);
+?>
