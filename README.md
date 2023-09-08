@@ -1,6 +1,11 @@
 # e_waste
 
-A new Flutter project.
+In this project, I designed and developed a dynamic and feature-rich mobile
+application using Flutter, a popular cross-platform development framework. The
+primary goal of the application was to provide users with a seamless and interactive
+experience while accessing and managing various data. To achieve this, I integrated
+a PHP-based API to facilitate communication between the Flutter application and
+the MySQL database.
 
 ## Getting Started
 
